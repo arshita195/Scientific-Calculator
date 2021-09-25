@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<head>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        #input {
+            width: 350px;
+            height: 40px;
+            margin-bottom: 100px;
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-top: 100px;
+            border-radius: 5px;
+            padding: 5px;
+
+        }
+
+        .outer {
+            margin-top: 150px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 400px;
+            background: linear-gradient(to right, rgb(142, 158, 171), rgb(238, 242, 243));
+            border: gray;
+            border-radius: 10px;
+
+        }
+
+
+        .row {
+            margin-bottom: 20px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="outer">
+
+
+        <div class="inner">
+            <input type="text" name="in" placeholder="0" style="text-align:right" id="input">
+            <br>
+            <div class="row">
+
+                <button type="button" value="a" class="btn btn-light btn-lg" onclick="segments(value)"> rnd </button>
+                <button type="button" value="b" class="btn btn-light btn-lg" onclick="segments(value)"> abs </button>
+                <button type="button" value="c" class="btn btn-light btn-lg" onclick="segments(value)"> Floor </button>
+                <button type="button" value="d" class="btn btn-light btn-lg" onclick="segments(value)"> Ceil </button>
+
+
+                <br>
+            </div>
+            <div class="row">
+
+                <button type="button" value="sine" class="btn btn-light btn-lg"
+                    onclick="inverses(value)">sin<sup>-1</sup> </button>
+                <button type="button" value="cose" class="btn btn-light btn-lg" onclick="inverses(value)">
+                    cos<sup>-1</sup> </button>
+                <button type="button" value="tane" class="btn btn-light btn-lg" onclick="inverses(value)">
+                    tan<sup>-1</sup></button>
+                <button type="button" value="!" class="btn btn-light btn-lg" onclick="factorial()"> x<sup>-1</sup>
+                </button> </td>
+            </div>
+            <div class="row">
+                <button type="button" value="sin" onclick="sin()" class="btn btn-light btn-lg"> sin </button>
+                <button type="button" value="cos" onclick="cos()" class="btn btn-light btn-lg"> cos</button>
+                <button type="button" value="tan" onclick="tan()" class="btn btn-light btn-lg"> tan </button>
+                <button type="button" value="C" onclick="remove()" class="btn btn-light btn-lg"> clear </button>
+
+
+            </div>
+
+            <div class="row">
+                <button type="button" value="x^2" onclick="square()  " class="btn btn-light btn-lg"> x<sup>2 </button>
+                <button type="button" value="x^3" onclick="cube()" class="btn btn-light btn-lg"> x<sup>3 </button>
+                <button type="button" value="sqrt2" onclick="sqrt2()" class="btn btn-light btn-lg"> &radic; </button>
+                <button type="button" value="sqrt3" onclick="sqrt3()" class="btn btn-light btn-lg"> &#8731; </button>
+
+            </div>
+            <div class="row">
+                <button type="button" value="1" onclick="number(value)" class="btn btn-light btn-lg"> 1 </button>
+                <button type="button" value="2" onclick="number(value)" class="btn btn-light btn-lg"> 2 </button>
+                <button type="button" value="3" onclick="number(value)" class="btn btn-light btn-lg"> 3 </button>
+                <button type="button" value="BACKSPC" onclick="BACKSPC() " class="btn btn-light btn-lg">
+                    < </button>
+
+
+
+
+            </div>
+
+            <div class="row">
+                <button type="button" value="4" onclick="number(value)" class="btn btn-light btn-lg"> 4</button>
+                <button type="button" value="5" onclick="number(value)" class="btn btn-light btn-lg"> 5 </button>
+                <button type="button" value="6" onclick="number(value)" class="btn btn-light btn-lg"> 6 </button>
+                <button type="button" value="%" onclick="number(value)" class="btn btn-light btn-lg"> % </button>
+
+
+            </div>
+
+            <div class="row">
+                <button type="button" value="7" onclick="number(value)" class="btn btn-light btn-lg"> 7 </button>
+                <button type="button" value="8" onclick="number(value)" class="btn btn-light btn-lg"> 8 </button>
+                <button type="button" value="9" onclick="number(value)" class="btn btn-light btn-lg"> 9 </button>
+                <button type="button" value="/" onclick="number(value)" class="btn btn-light btn-lg"> / </button>
+
+            </div>
+
+            <div class="row">
+                <button type="button" value="." class="btn btn-light btn-lg" onclick="number(value) "> . </button>
+                <button type="button" value="0" class="btn btn-light btn-lg" onclick="number(value)"> 0 </button>
+                <button type="button" value="*" class="btn btn-light btn-lg" onclick="number(value)"> * </button>
+                <button type="button" value="+" class="btn btn-light btn-lg" onclick="number(value)"> + </button>
+
+
+
+                <br>
+            </div>
+            <div class="row">
+                <button type="button" value="," class="btn btn-light btn-lg" onclick="number(value)"> , </button>
+                <button type="button" value="=" class="btn btn-light btn-lg" onclick="equal()" class="equal">=</button>
+                <button type="button" value="-" class="btn btn-light btn-lg" onclick="number(value)"> - </button>
+
+                <button type="button" value="l" class="btn btn-light btn-lg" onclick="logg()"> ln </button>
+
+                <br>
+            </div>
+
+
+            <div class="row">
+
+                <button type="button" value="(" class="btn btn-light btn-lg" onclick="number(value)"> ( </button>
+                <button type="button" value=")" class="btn btn-light  btn-lg" onclick="number(value)"> ) </button> </td>
+                <button type="button" value="*" class="btn btn-light btn-lg" onclick="number(value)"> * </button> </td>
+                <button type="button" value="+" class="btn btn-light btn-lg" onclick="number(value)"> + </button> </td>
+                <br>
+            </div>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+        function number(value) {
+            document.getElementById("input").value += value;
+        }
+
+
+        function equal() {
+
+            document.getElementById("input").value = eval(document.getElementById("input").value);
+
+        }
+
+
+        function remove() {
+
+            document.getElementById("input").value = "";
+        }
+
+        function sin() {
+            document.getElementById("input").value = Math.sin(document.getElementById("input").value);
+        }
+
+        function cos() {
+            document.getElementById("input").value = Math.cos(document.getElementById("input").value);
+        }
+
+        function tan() {
+            document.getElementById("input").value = Math.tan(document.getElementById("input").value);
+        }
+
+        function sqrt2() {
+            a = document.getElementById("input").value;
+            document.getElementById("input").value = Math.sqrt(a);
+        }
+
+        function sqrt3() {
+            a = document.getElementById("input").value;
+            document.getElementById("input").value = Math.cbrt(a);
+        }
+
+
+        function square() {
+            a = document.getElementById("input").value;
+            document.getElementById("input").value = a * a;
+        }
+
+        function cube() {
+            a = document.getElementById("input").value;
+            document.getElementById("input").value = a * a * a;
+        }
+
+        function logg() {
+            a = document.getElementById("input").value;
+            document.getElementById("input").value = Math.log(a);
+        }
+
+
+        function inverses(value) {
+            a = document.getElementById("input").value;
+
+            if (value == "sine")
+                document.getElementById("input").value = Math.asin(a);
+
+            if (value == "cose")
+                document.getElementById("input").value = Math.acos(a);
+
+            if (value == "tane")
+                document.getElementById("input").value = Math.atan(a);
+
+        }
+
+        function factorial() {
+            var a = document.getElementById("input").value;
+            var fact = 1;
+            for (var i = 1; i <= a; i++) { fact = fact * i; }
+            document.getElementById("input").value = fact;
+
+        }
+
+
+        function segments(value) {
+
+            a = document.getElementById("input").value;
+
+            if (value == "a")
+                document.getElementById("input").value = Math.round(a);
+
+            if (value == "b")
+                document.getElementById("input").value = Math.abs(a);
+
+            if (value == "c")
+                document.getElementById("input").value = Math.floor(a);
+
+            if (value == "d")
+                document.getElementById("input").value = Math.ceil(a);
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
